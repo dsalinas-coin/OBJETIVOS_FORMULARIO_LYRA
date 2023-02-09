@@ -1,0 +1,43 @@
+{% extends "base.html.twig" %}
+{% block mobile %}{% endblock %}
+{% block title %}Checkout 💳{% endblock %}
+{% block stylesheets %}<link rel="stylesheet" href="{{ asset('./css/incrustado.css') }}">{% endblock %}
+{% block body %}
+    {% block subtitulo %}<h2> Vas a pagar una rica {{ arepa }} </h2>{% endblock %}
+    <!-- formulario embebido -->
+        <div class="kr-embedded"
+             kr-form-token="{{ token }}">
+            <!-- payment form fields -->
+            <div class="kr-pan"></div>
+            <div class="kr-expiry"></div>
+            <div class="kr-security-code"></div>
+            <!-- payment form submit button -->
+            <button class="kr-payment-button">PAGAR 🤑</button>
+            <!-- error zone -->
+            <div class="kr-form-error"></div>
+        </div>
+    {% block footer %} 
+        <footer style="background-color:#000; padding:10px; margin-bottom:34px; margin-left: -10px; color:#fff; position: fixed; bottom:0; width:100%; text-align:center">
+            Vamos por esos objetivos 👍 
+        </footer>
+    {% endblock %}
+    {% block javascripts %}
+        <script
+                src="https://static.cobroinmediato.tech/static/js/krypton-client/V4.0/stable/kr-payment-form.min.js"
+                kr-public-key="29014176:testpublickey_WpmEIR5BOLgnGB66VtRhLRx6aaw74510cMRFfb74GrF5I"
+                kr-post-url-success="{{ path('success') }}"
+                kr-post-url-refused="{{ path('refused') }}"
+                >
+        </script>
+        <script
+                src="https://static.cobroinmediato.tech/static/js/krypton-client/V4.0/ext/classic.js">
+        </script>
+    {% endblock %}
+    {% block lyra %}
+        <!-- theme and plugins. should be loaded after the javascript library -->
+        <!-- not mandatory but helps to have a nice payment form out of the box -->
+        <link rel="stylesheet"
+              href="https://static.cobroinmediato.tech/static/js/krypton-client/V4.0/ext/classic-reset.css"
+        >
+    {% endblock %}
+{% endblock %}

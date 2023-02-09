@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- CHARSET -->
+        <meta charset="UTF-8">
+        <!-- IE-EDGE -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- VIEWPORT -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- DESCRIPTION -->
+        <meta name="description" content="Aprende a desarrollar páginas web desde cero">
+        <!-- AUTHOR -->
+        <meta name="author" content="Daniel Salinas">
+        <!-- TITTLE -->
+        <title>Arepera 🫓</title>
+        <!-- STYLES -->
+        <link rel="stylesheet" href="./css/paso1.css">
+        <!--FAVICON -->
+        <link  rel="icon"   href="imagenes/favicon.png" type="image/png" />
+    </head>
+<body>
+
+    <h1>Selecciona tu arepa 🫓</h1>
+
+    {% set listado = 
+        [
+            {"arepa":"Reina Pepiada","precio":10, "orderId": 1},
+            {"arepa":"Catira","precio":10, "orderId": 2},
+            {"arepa":"Llanera","precio":10, "orderId": 3},
+            {"arepa":"Pelúa","precio":10, "orderId": 4},
+            {"arepa":"Dominó","precio":10, "orderId": 5},
+            {"arepa":"Viuda","precio":10, "orderId": 6},
+            {"arepa":"Sifrina","precio":10, "orderId": 7},
+            {"arepa":"Pabellón Criollo","precio":10, "orderId": 8},
+            {"arepa":"Pernil","precio":10, "orderId": 9},
+            {"arepa":"Rumbera","precio":10, "orderId": 10},
+            {"arepa":"Pata Pata","precio":10, "orderId": 11},
+            {"arepa":"Rompe Colchón","precio":10, "orderId": 12},
+            {"arepa":"Perico","precio":10, "orderId": 13},
+        ] 
+    %}
+    
+    {% for item in listado %}
+
+    <figure class="arepas">
+        <figcaption>
+            <a href="{{ path(nextcontroller,{'arepa': item.arepa , 'precio': item.precio, 'orderId': item.orderId} ) }}">
+                <h2>🫓 {{ item.arepa }} ${{ item.precio }} </h2>
+            </a>
+        </figcaption>
+    </figure> 
+
+    {% endfor %}
+
+    <footer style="background-color:#000; padding:10px; margin-top:5px; margin-left: -10px; color:#fff; position: fixed; bottom:0; width:100%; text-align:center">
+        Vamos por esos objetivos 👍 
+    </footer>
+</body>

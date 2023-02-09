@@ -1,0 +1,12 @@
+body {
+  background: #141e30;
+  background: linear-gradient(to right, #243b55, #141e30);
+  color: #fff;
+  text-align: center;
+  margin: auto;
+}
+
+.kr-embedded {
+  text-align: center;
+  margin: auto;
+}

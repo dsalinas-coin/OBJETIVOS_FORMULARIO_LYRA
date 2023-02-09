@@ -1,0 +1,16 @@
+body {
+  background: #141e30;
+  background: linear-gradient(to right, #243b55, #141e30);
+  color: #fff;
+  text-align: center;
+}
+
+a {
+  color: #fff !important;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+h2 {
+  display: inline-block;
+}
